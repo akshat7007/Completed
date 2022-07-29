@@ -52,7 +52,7 @@ export default function SignIn() {
   useEffect(() => {
     let userToken = localStorage.getItem("token");
     dispatch(getToken(userToken));
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (tokens) {

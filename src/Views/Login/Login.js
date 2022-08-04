@@ -42,11 +42,11 @@ export default function SignIn() {
 
   const dispatch = useDispatch();
 
-  let tokens = useSelector((cv) => cv.user.tokens);
+  const tokens = useSelector((cv) => cv.user.tokens);
   console.log(tokens);
 
   const [change, setChange] = useState(initialValue);
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -88,13 +88,10 @@ export default function SignIn() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setFormErrors(validate(change));
-    // setIsSubmit(true);
 
     if (validaton()) {
       AuthService(change)
         .then((data) => {
-          // submitPage(data.token);
           console.log("submitpage", data.token);
 
           localStorage.setItem("token", data.token);
@@ -184,5 +181,3 @@ export default function SignIn() {
     </ThemeProvider>
   );
 }
-// eve.holt@reqres.in
-// cityslicka

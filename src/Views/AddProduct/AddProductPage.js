@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import { Divider, Typography, Button } from "@mui/material";
+import { Divider, Typography, Button, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -91,7 +91,7 @@ function AddProductPage() {
           flexDirection: "column",
         }}
       >
-        <div>
+        <div style={{ textAlign: "center" }}>
           <Typography style={{}} component="h1" variant="h5">
             Add New Product
           </Typography>
@@ -115,7 +115,7 @@ function AddProductPage() {
             type="text"
             autoComplete="off"
             value={input.title}
-            // autoFocus
+          // autoFocus
           />
           {title ? <span style={{ color: "red" }}> {label}</span> : null}
 
@@ -146,7 +146,7 @@ function AddProductPage() {
           />
           {image ? <span style={{ color: "red" }}>{label} </span> : null}
 
-          <TextField
+          {/* <TextField
             margin="normal"
             required
             fullWidth
@@ -156,7 +156,23 @@ function AddProductPage() {
             label="Add Category"
             name="category"
             value={input.category}
-          />
+          /> */}
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <Select
+              required
+              labelId="demo-simple-select-label"
+              id="outlined-basic"
+              value={input.category}
+              name="category"
+              label="Select Category"
+              onChange={inputHandler}
+            >
+              <MenuItem value={input.category}>men,s clothing</MenuItem>
+              <MenuItem value={input}>Twenty</MenuItem>
+              <MenuItem value={input}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
           {category ? <span style={{ color: "red" }}>{label} </span> : null}
 
           <Button

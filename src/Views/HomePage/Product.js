@@ -47,9 +47,10 @@ export default function Product() {
             >
               <Grid
                 style={{
-                  margin: "16px",
+                  // margin: "16px",
                   justifyContent: "center",
-                  marginRight: "16px",
+                  width:"auto",
+                  height:"100%",
                   display: "flex",
                 }}
               >
@@ -65,8 +66,8 @@ export default function Product() {
                     height="150"
                     image={product.image}
                     style={{
-                      height: "200px",
-                      width: "300px",
+                      // height: "200px",
+                      // width: "300px",
                       objectFit: "contain",
                     }}
                   />
